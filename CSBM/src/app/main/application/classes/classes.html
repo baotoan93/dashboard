@@ -1,0 +1,61 @@
+<div id="classes" class="page-layout simple fullwidth doc-page">
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">MANAGEMENT</span>
+            </div>
+            <div class="title">Classes</div>
+        </div>
+        <div layout="row" layout-align="start center">
+            <md-button class="md-primary md-raised" ng-click="showDialog($event)">
+                <md-icon md-font-icon="icon-plus"></md-icon>
+                <span>Create new class</span>
+            </md-button>
+        </div>
+    </div>
+    <div layout="row" layout-align="start center">
+        <md-button class="md-raised md-accent" ng-click="showAddColumnDialog($event)">
+            <md-icon md-font-icon="icon-plus"></md-icon>
+            <span>Create new column</span>
+        </md-button>
+        <md-button class="md-raised md-accent" ng-click="showDelColumnDialog($event)">
+            <md-icon md-font-icon="icon-delete"></md-icon>
+            <span>Delete column</span>
+        </md-button>
+    </div>
+    <!-- / HEADER -->
+    <!-- CONTENT -->
+    <div class="content" md-background-bg>
+        <div class="white-bg md-whiteframe-4dp">
+            <form name="myform" id="myform">
+                <table class="simple" id="table" ms-responsive-table>
+                    <thead>
+                        <tr>
+                            <th ng-repeat="field in fields">{{field}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="document in documents">
+                            <td ng-repeat="(key, value) in document">
+                                <input type="text" id="value" name="value" ng-model="value" placeholder="Value" value="value">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <!-- BASIC FORM -->
+        <div class="form-wrapper md-whiteframe-4dp" ng-controller="ClassesController">
+<!--             <div layout="column" layout-gt-sm="row">
+                <md-input-container flex>
+                    <input type="text" name="txtKey" ng-model="columnName" placeholder="Key">
+                </md-input-container>
+            </div> -->
+        </div>
+        <!-- / BASIC FORM -->
+    </div>
+    <!-- / CONTENT -->
+</div>
